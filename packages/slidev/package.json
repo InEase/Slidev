@@ -1,5 +1,5 @@
 {
-  "name": "@slidev/cli",
+  "name": "@inease/slidev-cli",
   "version": "0.34.1",
   "description": "Presentation slides for developers",
   "author": "antfu <anthonyfu117@hotmail.com>",
@@ -51,7 +51,7 @@
     "@antfu/utils": "^0.5.2",
     "@iconify-json/carbon": "^1.1.6",
     "@iconify-json/ph": "^1.1.2",
-    "@slidev/client": "workspace:*",
+    "@inease/slidev-client": "workspace:*",
     "@slidev/parser": "workspace:*",
     "@slidev/types": "workspace:*",
     "@vitejs/plugin-vue": "^2.3.3",
