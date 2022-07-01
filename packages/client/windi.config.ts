@@ -7,7 +7,7 @@ export default defineConfig({
   extract: {
     include: [
       resolve(process.cwd(), '**/*.{vue,ts,tsx,js,jsx,md}'),
-      // @slidev/client/**/*.{vue,ts}
+      // @inease/slidev-client/**/*.{vue,ts}
       resolve(__dirname, '**/*.{vue,ts}'),
     ],
     exclude: [
@@ -15,7 +15,7 @@ export default defineConfig({
       'dist',
       resolve(process.cwd(), '.git'),
       resolve(process.cwd(), 'dist'),
-      // @slidev/client/node_modules
+      // @inease/slidev-client/node_modules
       resolve(__dirname, 'node_modules'),
       resolve(__dirname, 'windi.config.ts'),
     ],

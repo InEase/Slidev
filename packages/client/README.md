@@ -1,8 +1,8 @@
-# @slidev/client
+# @inease/slidev-client
 
-[![NPM version](https://img.shields.io/npm/v/@slidev/client?color=3AB9D4&label=)](https://www.npmjs.com/package/@slidev/client)
+[![NPM version](https://img.shields.io/npm/v/@inease/slidev-client?color=3AB9D4&label=)](https://www.npmjs.com/package/@inease/slidev-client)
 
-Client code for [Slidev](https://sli.dev). Shipped with [`@slidev/cli`](https://www.npmjs.com/package/@slidev/cli).
+Client code for [Slidev](https://sli.dev). Shipped with [`@inease/slidev-cli`](https://www.npmjs.com/package/@inease/slidev-cli).
 
 ## License
 

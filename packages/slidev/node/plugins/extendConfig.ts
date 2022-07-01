@@ -29,7 +29,7 @@ export function createConfigPlugin(options: ResolvedSlidevOptions): Plugin {
         define: getDefine(options),
         resolve: {
           alias: {
-            '@slidev/client/': `${toAtFS(options.clientRoot)}/`,
+            '@inease/slidev-client/': `${toAtFS(options.clientRoot)}/`,
           },
         },
         optimizeDeps: {
@@ -67,7 +67,7 @@ export function createConfigPlugin(options: ResolvedSlidevOptions): Plugin {
               searchForWorkspaceRoot(options.cliRoot),
               ...(
                 isInstalledGlobally
-                  ? [dirname(resolveGlobalImportPath('@slidev/client/package.json')), dirname(resolveGlobalImportPath('katex/package.json'))]
+                  ? [dirname(resolveGlobalImportPath('@inease/slidev-client/package.json')), dirname(resolveGlobalImportPath('katex/package.json'))]
                   : []
               ),
             ]),

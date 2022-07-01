@@ -74,7 +74,7 @@ export interface SlidevServerOptions {
 }
 
 export function getClientRoot() {
-  return dirname(resolveImportPath('@slidev/client/package.json', true))
+  return dirname(resolveImportPath('@inease/slidev-client/package.json', true))
 }
 
 export function getCLIRoot() {
