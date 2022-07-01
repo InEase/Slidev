@@ -81,10 +81,15 @@ export async function createMarkdownPlugin(
           ? transformMarkdownMonaco
           : truncateMancoMark
 
+        const jupyter = config.monaco === true
+          ? transformMarkdownJupyter
+          : truncateJupyterMark
+
         code = transformSlotSugar(code)
         code = transformMermaid(code)
         code = transformPlantUml(code, config.plantUmlServer)
         code = monaco(code)
+        code = jupyter(code)
         code = transformHighlighter(code)
         code = transformPageCSS(code, id)
 
@@ -108,6 +113,21 @@ export function transformMarkdownMonaco(md: string) {
 
 export function truncateMancoMark(md: string) {
   return md.replace(/{monaco.*?}/g, '')
+}
+
+export function transformMarkdownJupyter(md: string) {
+  // transform monaco
+  md = md.replace(/^```(\w+?)\s*{jupyter}\s*?({.*?})?\s*?\n([\s\S]+?)^```/mg, (full, lang = 'ts', options = '{}', code: string) => {
+    lang = lang.trim()
+    options = options.trim() || '{}'
+    return `<Jupyter :code="'${code}'" lang="${lang}" v-bind="${options}" />`
+  })
+
+  return md
+}
+
+export function truncateJupyterMark(md: string) {
+  return md.replace(/{jupyter.*?}/g, '')
 }
 
 export function transformSlotSugar(md: string) {
