@@ -13,7 +13,7 @@ Learn more: https://sli.dev/guide/syntax.html#monaco-editor
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watchEffect } from 'vue'
-import { useEventListener } from '@vueuse/core'
+import { useEventListener, watchDebounced } from '@vueuse/core'
 import { decode } from 'js-base64'
 import { nanoid } from 'nanoid'
 import { isDark } from '../logic/dark'
@@ -35,6 +35,10 @@ const props = defineProps({
     default: 'auto',
   },
 })
+
+const emit = defineEmits<{
+  (e: 'change', code: string): void
+}>()
 
 const id = nanoid()
 const code = ref(decode(props.code).trimEnd())
@@ -122,6 +126,12 @@ useEventListener(window, 'message', ({ data: payload }) => {
     return
   code.value = payload.data.code
 })
+
+watchDebounced(
+  code,
+  () => { emit('change', code.value) },
+  { debounce: 500, maxWait: 1000 },
+)
 
 watchEffect(() => {
   if (!isReady.value)
