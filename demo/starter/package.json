@@ -6,11 +6,14 @@
     "export": "slidev export"
   },
   "devDependencies": {
-    "@inease/slidev-cli": "workspace:*",
+    "@slidev/cli": "workspace:@inease/slidev-cli@*",
     "@slidev/theme-default": "^0.21.2",
     "@slidev/theme-seriph": "^0.21.2",
     "@slidev/types": "workspace:*",
     "nodemon": "^2.0.18",
     "vite-plugin-inspect": "^0.5.1"
+  },
+  "dependencies": {
+    "@slidev/client": "workspace:@inease/slidev-client@*"
   }
 }

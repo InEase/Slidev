@@ -130,14 +130,16 @@ importers:
 
   demo/starter:
     specifiers:
-      '@inease/slidev-cli': workspace:*
+      '@slidev/cli': workspace:@inease/slidev-cli@*
+      '@slidev/client': workspace:@inease/slidev-client@*
       '@slidev/theme-default': ^0.21.2
       '@slidev/theme-seriph': ^0.21.2
       '@slidev/types': workspace:*
       nodemon: ^2.0.18
       vite-plugin-inspect: ^0.5.1
     devDependencies:
-      '@inease/slidev-cli': link:../../packages/slidev
+      '@slidev/cli': link:../../packages/slidev
+      '@slidev/client': link:../../packages/client
       '@slidev/theme-default': 0.21.2
       '@slidev/theme-seriph': 0.21.2
       '@slidev/types': link:../../packages/types
@@ -1340,7 +1342,7 @@ packages:
       '@types/web-bluetooth': 0.0.14
       '@vueuse/metadata': 8.7.5
       '@vueuse/shared': 8.7.5
-      vue-demi: 0.13.1
+      vue-demi: 0.12.5
     dev: true
 
   /@vueuse/core/8.7.5_vue@3.2.37:
@@ -1418,7 +1420,7 @@ packages:
       vue:
         optional: true
     dependencies:
-      vue-demi: 0.13.1
+      vue-demi: 0.12.5
     dev: true
 
   /@vueuse/shared/8.7.5_vue@3.2.37:
@@ -6918,6 +6920,19 @@ packages:
       vue: 3.2.37
     dev: false
 
+  /vue-demi/0.12.5:
+    resolution: {integrity: sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dev: true
+
   /vue-demi/0.12.5_vue@3.2.37:
     resolution: {integrity: sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==}
     engines: {node: '>=12'}
@@ -6932,19 +6947,6 @@ packages:
     dependencies:
       vue: 3.2.37
     dev: false
-
-  /vue-demi/0.13.1:
-    resolution: {integrity: sha512-xmkJ56koG3ptpLnpgmIzk9/4nFf4CqduSJbUM0OdPoU87NwRuZ6x49OLhjSa/fC15fV+5CbEnrxU4oyE022svg==}
-    engines: {node: '>=12'}
-    hasBin: true
-    requiresBuild: true
-    peerDependencies:
-      '@vue/composition-api': ^1.0.0-rc.1
-      vue: ^3.0.0-0 || ^2.6.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-    dev: true
 
   /vue-eslint-parser/9.0.3_eslint@8.18.0:
     resolution: {integrity: sha512-yL+ZDb+9T0ELG4VIFo/2anAOz8SvBdlqEnQnvJ3M7Scq56DvtjY0VY88bByRZB0D4J0u8olBcfrXTVONXsh4og==}
