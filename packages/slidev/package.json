@@ -34,7 +34,7 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "build": "rimraf dist && tsup node/index.ts node/cli.ts --dts --format cjs,esm --splitting --external @inease/slidev-client/package.json",
+    "build": "rimraf dist && tsup node/index.ts node/cli.ts --dts --format cjs,esm --splitting --external @slidev/client/package.json",
     "dev": "nr build --watch",
     "prepublishOnly": "npm run build",
     "start": "esno node/cli.ts"
@@ -51,7 +51,7 @@
     "@antfu/utils": "^0.5.2",
     "@iconify-json/carbon": "^1.1.6",
     "@iconify-json/ph": "^1.1.2",
-    "@inease/slidev-client": "workspace:*",
+    "@slidev/client": "workspace:*",
     "@slidev/parser": "workspace:*",
     "@slidev/types": "workspace:*",
     "@vitejs/plugin-vue": "^2.3.3",
